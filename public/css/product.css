@@ -1,0 +1,259 @@
+/* ==========================================================
+   Product Page — Light Theme
+   Import once in master layout <head>, or link this file:
+   <link rel="stylesheet" href="{{ asset('css/product-page.css') }}">
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:            #f6f7f9;
+  --surface:        #ffffff;
+  --surface-2:      #f5f7fa;
+  --border:         #e7e9ee;
+  --border-soft:    #eef0f4;
+  --text-primary:   #14181f;
+  --text-secondary: #667085;
+  --text-tertiary:  #9aa1ae;
+  --accent-blue:    #2f5fe0;
+  --accent-blue-soft: #eaf0ff;
+  --accent-green:   #17a673;
+  --accent-green-soft: #e7f8f1;
+  --accent-orange:  #e2662f;
+  --accent-orange-soft: #fdeee6;
+  --radius:         16px;
+}
+
+body{
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+/* ---------- Back button ---------- */
+.back-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.back-btn:hover{
+  color: var(--text-primary);
+  border-color: #d6dae1;
+  gap: 11px;
+  box-shadow: 0 2px 8px rgba(20,24,31,0.06);
+}
+
+/* ---------- Product card ---------- */
+.product-box{
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20,24,31,0.04), 0 12px 32px -16px rgba(20,24,31,0.08) !important;
+}
+
+/* ---------- Image panel ---------- */
+.image-box{
+  position: relative;
+  height: 100%;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background:
+    radial-gradient(ellipse 340px 260px at 50% 45%, var(--accent-blue-soft) 0%, transparent 72%),
+    var(--surface-2);
+  border-right: 1px solid var(--border-soft);
+}
+.image-box .image-tag{
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--accent-blue);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.product-image{
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgba(20,24,31,0.16));
+}
+
+/* ---------- Content panel ---------- */
+.product-content{
+  padding: 44px 44px 40px;
+}
+
+.product-content .badge.bg-primary{
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: .05em;
+  background: var(--accent-blue-soft) !important;
+  color: var(--accent-blue) !important;
+  border: 1px solid #d3e0fb;
+  border-radius: 7px !important;
+}
+
+.product-content h1{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin: 14px 0 12px;
+}
+
+.rating{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  letter-spacing: 1px;
+}
+.rating span{
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.price{
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.description{
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  padding-bottom: 26px;
+  margin-bottom: 0;
+}
+
+.product-content hr{
+  margin: 0 0 26px;
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  opacity: 1;
+}
+
+/* ---------- Spec grid ---------- */
+.spec-grid{
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.spec-item{
+  padding: 16px 20px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-soft);
+  border-left: 3px solid transparent;
+  transition: all .15s ease;
+}
+.spec-item:nth-child(odd){ border-right: 1px solid var(--border-soft); }
+.spec-item:nth-last-child(-n+2){ border-bottom: none; }
+.spec-item:hover{
+  border-left-color: var(--accent-blue);
+  background: #ffffff;
+}
+.spec-item strong{
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 5px;
+}
+.spec-item p{
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.spec-item p.text-success{
+  color: var(--accent-green) !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.buttons{
+  display: flex;
+  gap: 12px;
+}
+.buttons form{ flex: 1; display: flex; }
+
+.cart-btn,
+.buy-btn{
+  flex: 1;
+  width: 100%;
+  padding: 14px 22px;
+  border-radius: 11px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all .15s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.cart-btn{
+  background: var(--accent-orange-soft);
+  color: var(--accent-orange);
+  border: 1px solid #f6d9c7;
+}
+.cart-btn:hover{
+  background: #fbe1d1;
+  transform: translateY(-1px);
+}
+
+.buy-btn{
+  background: var(--accent-green);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -8px rgba(23,166,115,0.55);
+}
+.buy-btn:hover{
+  background: #149164;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -8px rgba(23,166,115,0.6);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px){
+  .image-box{ border-right: none; border-bottom: 1px solid var(--border-soft); min-height: 320px; }
+  .product-content{ padding: 32px 26px; }
+  .product-content h1{ font-size: 26px; }
+  .price{ font-size: 27px; }
+  .spec-item:nth-child(odd){ border-right: none; }
+  .spec-item:nth-last-child(-n+2){ border-bottom: 1px solid var(--border-soft); }
+  .spec-item:last-child{ border-bottom: none; }
+}
